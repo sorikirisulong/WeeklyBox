@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundedConstraintLayout">
+        <attr name="rc_radius" format="dimension" />
+        <attr name="rc_fill_color" format="color" />
+        <attr name="rc_stroke_color" format="color" />
+        <attr name="rc_stroke_width" format="dimension" />
+        <attr name="exclude_corner" format="enum">
+            <enum name="only_top" value="1"/>
+            <enum name="only_bottom" value="2"/>
+        </attr>
+    </declare-styleable>
+</resources>

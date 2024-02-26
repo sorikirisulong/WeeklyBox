@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ProgressBarDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@color/white_70p</item>
+        <item name="android:background">@color/white_70p</item>
+        <item name="android:statusBarColor">@color/white_70p</item>
+    </style>
+
+    <!-- BottomSheet theme with radius 40, with horizontal margins -->
+    <style name="AppBottomSheetDialogTopRoundedTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppRoundedTopBottomSheetStyle_R12</item>
+    </style>
+
+
+    <style name="AppRoundedTopBottomSheetStyle_R12" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_white_r12_top</item>
+    </style>
+</resources>

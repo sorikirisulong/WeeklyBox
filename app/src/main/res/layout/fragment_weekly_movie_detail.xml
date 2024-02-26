@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.hsh.weeklybox.ui.movielist.WeeklyMovieDetailViewModel" />
+    </data>
+
+    <com.hsh.weeklybox.ui.common.customview.RoundedConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:rc_radius="36dp"
+        app:rc_stroke_color="@color/white"
+        app:rc_fill_color="#FF4081">
+
+        <ImageButton
+            android:id="@+id/btn_close"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/btn_close_gray"
+            android:focusable="true"
+            android:clickable="true"
+            android:onClick="@{() -> vm.onCloseBtnClick()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="15dp"
+            android:paddingEnd="20dp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="20dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/tv_info_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="32sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="영화 상세정보" />
+
+            <TextView
+                android:id="@+id/tv_movie_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="26sp"
+                android:maxLines="2"
+                android:textColor="@color/white"
+                android:text="@{@string/txt_title_movie_kor + vm.viewState.textMovieTitleKor}"  />
+
+            <TextView
+                android:id="@+id/tv_movie_eng_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="2"
+                android:textSize="26sp"
+                android:textColor="@color/white"
+                android:text="@{@string/txt_title_movie_eng + vm.viewState.textMovieTitleEng}" />
+            
+            <TextView
+                android:id="@+id/tv_movie_open_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="2"
+                android:textSize="26sp"
+                android:textColor="@color/white"
+                android:text="@{@string/txt_title_movie_open_date + vm.viewState.textMovieOpenDt}" />
+
+            <TextView
+                android:id="@+id/tv_movie_prd_stats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="2"
+                android:textSize="26sp"
+                android:textColor="@color/white"
+                android:text="@{@string/txt_title_movie_open_stats + vm.viewState.textMovieOpenStat}" />
+
+            <TextView
+                android:id="@+id/tv_movie_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:layout_marginTop="10dp"
+                android:textSize="26sp"
+                android:textColor="@color/white"
+                android:text="@{@string/txt_title_movie_type + vm.viewState.textMovieType}" />
+
+            <TextView
+                android:id="@+id/tv_movie_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:layout_marginTop="10dp"
+                android:textSize="26sp"
+                android:textColor="@color/white"
+                android:text="@{@string/txt_title_movie_code + vm.viewState.textMovieCode}" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:id="@+id/failOverView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:goneUnless="@{!vm.viewState.hasData}"/>
+    </com.hsh.weeklybox.ui.common.customview.RoundedConstraintLayout>
+
+</layout>

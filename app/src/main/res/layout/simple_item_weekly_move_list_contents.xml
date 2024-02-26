@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="com.hsh.weeklybox.ui.movielist.model.WeeklyBoxOfficeUIModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_content"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="#FF1493"
+            android:paddingTop="22dp"
+            android:paddingHorizontal="10dp"
+            android:paddingBottom="16dp">
+
+            <LinearLayout
+                android:id="@+id/layout_box_office_rank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/suffix_box_office_rank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="14dp"
+                    android:text="@string/txt_title_boxoffice_rank"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/txt_movie_rank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="14dp"
+                    android:paddingTop="20dp"
+                    android:text="@{model.weeklyBoxOffice.rank}"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_movie_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="14dp"
+                android:layout_marginTop="10dp"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="@string/txt_title_movie"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_box_office_rank" />
+
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginTop="10dp"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:ellipsize="end"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:text = "@{model.weeklyBoxOffice.movieNm}"
+                app:layout_constraintStart_toEndOf="@+id/txt_movie_title"
+                app:layout_constraintTop_toBottomOf="@+id/layout_box_office_rank" />
+
+            <LinearLayout
+                android:id="@+id/layout_box_office_open_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toBottomOf="@id/txt_movie_title"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/suffix_box_office_open_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="14dp"
+                    android:text="@string/txt_title_movie_open_date"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/txt_movie_open_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="14dp"
+                    android:text="@{model.weeklyBoxOffice.openDt}"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/btn_show_detail"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rounded_button"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:text="@string/btn_text_movie_detail"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:selectableItemBackground"
+                android:onClick="@{() -> model.onClickDetailMovieInfo(model.weeklyBoxOffice.movieCd)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_box_office_open_date" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

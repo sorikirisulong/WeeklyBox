@@ -1,0 +1,207 @@
+[versions]
+
+#android gradle version
+gradleVersion = "7.2.1"
+
+#kotlin version
+kotlinVersion = "1.8.22"
+
+#google version
+gsonVersion = "2.10.1"
+gsonExtrasVersion = "0.2.1"
+
+#xml parser version
+xmlParserVersion = "0.8.13"
+
+#coroutine version
+coroutinesVersion = "1.7.2"
+
+#retrofit version
+okhttpVersion = "4.11.0"
+retrofitVersion = "2.9.0"
+
+
+#rx version
+rxandroidVersion = "2.1.0"
+rxjavaVersion = "2.2.18"
+rxlifecycleVersion = "2.2.1"
+rxbindingVersion = "2.2.0"
+rxPreferencesVersion = "2.0.0-RC2"
+rxpermissionsVersion = "0.9.4"
+rxlocationVersion = "1.0.3"
+rximagepickerVersion = "2.2.1"
+loggerVersion = "2.2.0"
+timberVersion = "4.7.1"
+brazeUiVersion = "27.0.1"
+retrofitKotlinCoroutinesAdapterVersion = "0.9.2"
+rxdogtagVersion = "1.0.1"
+
+#androidx version
+androidXCoreVersion = "1.10.1"
+legacySupportCoreUiVersion = "1.0.0"
+fragmentKtxVersion = "1.6.1"
+legacySupportV4Version = "1.0.0"
+appCompatVersion = "1.6.1"
+annotationVersion = "1.6.0"
+constraintLayoutVersion = "2.1.4"
+lifecycleVersion = "2.6.1"
+workRuntimeVersion = "2.8.1"
+cardviewVersion = "1.0.0"
+viewpager2Version = "1.0.0"
+exifinterfaceVersion = "1.3.6"
+recyclerViewVersion = "1.2.1"
+recyclerViewSelectionVersion = "1.1.0"
+
+#hilt version
+hiltVersion = "2.44"
+hiltWorkVersion = "1.0.0"
+
+#google services version
+googleServicesVersion = "4.3.13"
+junit = "4.13.2"
+androidx-test-ext-junit = "1.1.5"
+espresso-core = "3.5.1"
+material = "1.11.0"
+
+
+[libraries]
+androidGradle = { module = "com.android.tools.build:gradle", version.ref = "gradleVersion" }
+kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinVersion" }
+hiltAndroidGradlePlugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltVersion" }
+
+#kotlin coroutines libraries
+coroutinesCore = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutinesVersion" }
+coroutinesAndroid = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutinesVersion" }
+
+#androidx libraries
+androidxCore = { module = "androidx.core:core-ktx", version.ref = "androidXCoreVersion" }
+legacySupportCoreUi = { module = "androidx.legacy:legacy-support-core-ui", version.ref = "legacySupportCoreUiVersion" }
+fragmentKtx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtxVersion" }
+legacySupportV4 = { module = "androidx.legacy:legacy-support-v4", version.ref = "legacySupportV4Version" }
+appCompat = { module = "androidx.appcompat:appcompat", version.ref = "appCompatVersion" }
+annotation = { module = "androidx.annotation:annotation", version.ref = "annotationVersion" }
+constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintLayoutVersion" }
+lifeCycleViewModelKtx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleVersion" }
+lifeCycleLiveDataKtx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycleVersion" }
+lifeCycleRuntimeKtx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleVersion" }
+lifeCycleCommonJava8 = { module = "androidx.lifecycle:lifecycle-common-java8", version.ref = "lifecycleVersion" }
+workRuntime = { module = "androidx.work:work-runtime", version.ref = "workRuntimeVersion" }
+workRuntimeKtx = { module = "androidx.work:work-runtime-ktx", version.ref = "workRuntimeVersion" }
+cardview = { module = "androidx.cardview:cardview", version.ref = "cardviewVersion" }
+viewpager2 = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager2Version" }
+exifinterface = { module = "androidx.exifinterface:exifinterface", version.ref = "exifinterfaceVersion" }
+recyclerView = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerViewVersion" }
+recyclerViewSelection = { module = "androidx.recyclerview:recyclerview-selection", version.ref = "recyclerViewSelectionVersion" }
+
+#rx libraries
+rxandroid = { module = "io.reactivex.rxjava2:rxandroid", version.ref = "rxandroidVersion" }
+rxjava = { module = "io.reactivex.rxjava2:rxjava", version.ref = "rxjavaVersion" }
+rxlifecycle = { module = "com.trello.rxlifecycle2:rxlifecycle", version.ref = "rxlifecycleVersion" }
+rxlifecycleAndroid = { module = "com.trello.rxlifecycle2:rxlifecycle-android", version.ref = "rxlifecycleVersion" }
+rxbinding = { module = "com.jakewharton.rxbinding2:rxbinding", version.ref = "rxbindingVersion" }
+rxbindingSupportV4 = { module = "com.jakewharton.rxbinding2:rxbinding-support-v4", version.ref = "rxbindingVersion" }
+rxbindingDesign = { module = "com.jakewharton.rxbinding2:rxbinding-design", version.ref = "rxbindingVersion" }
+rxbindingRecyclerviewV7 = { module = "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7", version.ref = "rxbindingVersion" }
+rxPreferences = { module = "com.f2prateek.rx.preferences2:rx-preferences", version.ref = "rxPreferencesVersion" }
+rxpermissions = { module = "com.tbruyelle.rxpermissions2:rxpermissions", version.ref = "rxpermissionsVersion" }
+rxlocation = { module = "com.patloew.rxlocation:rxlocation", version.ref = "rxlocationVersion" }
+rximagepicker = { module = "com.mlsdev.rximagepicker:library", version.ref = "rximagepickerVersion" }
+logger = { module = "com.orhanobut:logger", version.ref = "loggerVersion" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timberVersion" }
+brazeUi = { module = "com.braze:android-sdk-ui", version.ref = "brazeUiVersion" }
+retrofitKotlinCoroutinesAdapter = { module = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter", version.ref = "retrofitKotlinCoroutinesAdapterVersion" }
+rxdogtag = { module = "com.uber.rxdogtag:rxdogtag", version.ref = "rxdogtagVersion" }
+
+
+
+#androidx kapt libraries
+androidXLifeCycleCompiler = { module = "androidx.lifecycle:lifecycle-compiler", version.ref = "lifecycleVersion" }
+
+#hilt libraries
+hiltAndroid = { module = "com.google.dagger:hilt-android", version.ref = "hiltVersion" }
+hiltWork = { module = "androidx.hilt:hilt-work", version.ref = "hiltWorkVersion" }
+
+#hilt kapt libraries
+hiltAndroidCompiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltVersion" }
+hiltCompiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltWorkVersion" }
+
+googleServicesPlugin = { module = "com.google.gms:google-services", version.ref = "googleServicesVersion" }
+
+
+#retrofit libraries
+okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttpVersion" }
+loggingInterceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttpVersion" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofitVersion" }
+converterGson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofitVersion" }
+converterScalars = { module = "com.squareup.retrofit2:converter-scalars", version.ref = "retrofitVersion" }
+adapterRxjava2 = { module = "com.squareup.retrofit2:adapter-rxjava2", version.ref = "retrofitVersion" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+#google libraries
+gson = { module = "com.google.code.gson:gson", version.ref = "gsonVersion" }
+gson-extras = { module = "org.danilopianini:gson-extras", version.ref = "gsonExtrasVersion" }
+
+#xml parser libraries
+xmlParserCore = { module = "com.tickaroo.tikxml:core", version.ref = "xmlParserVersion" }
+xmlParserAnnotation = { module = "com.tickaroo.tikxml:annotation", version.ref = "xmlParserVersion" }
+xmlParserConverter = { module = "com.tickaroo.tikxml:retrofit-converter", version.ref = "xmlParserVersion" }
+xmlProcessor = { module = "com.tickaroo.tikxml:processor", version.ref = "xmlParserVersion" }
+
+[plugins]
+
+[bundles]
+hilt = ["hiltAndroid", "hiltWork"]
+
+androidX = [
+    "androidxCore",
+    "legacySupportCoreUi",
+    "fragmentKtx",
+    "legacySupportV4",
+    "appCompat",
+    "annotation",
+    "constraintlayout",
+    "lifeCycleViewModelKtx",
+    "lifeCycleLiveDataKtx",
+    "lifeCycleRuntimeKtx",
+    "lifeCycleCommonJava8",
+    "workRuntime",
+    "workRuntimeKtx",
+    "cardview"
+]
+
+retrofit = [
+    "okhttp",
+    "loggingInterceptor",
+    "retrofit",
+    "converterGson",
+    "converterScalars",
+    "adapterRxjava2"
+]
+
+xmlParser = [
+    "xmlParserCore",
+    "xmlParserAnnotation",
+    "xmlParserConverter"
+]
+
+rxlibraries = [
+    "rxandroid",
+    "rxjava",
+    "rxlifecycle",
+    "rxlifecycleAndroid",
+    "rxbinding",
+    "rxbindingDesign",
+    "rxbindingRecyclerviewV7",
+    "rxPreferences",
+    "rxpermissions",
+    "rxlocation",
+    "rximagepicker",
+    "logger",
+    "timber",
+    "brazeUi",
+    "retrofitKotlinCoroutinesAdapter",
+    "rxdogtag"
+]
