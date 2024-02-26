@@ -30,6 +30,7 @@ RecyclerView나 좀 더 많은 데이터를 복잡한 형태로 보여줘야한�
 8. 네트워크 모듈과 Dispatcher , useCase , Repository 에서는 Hilt를 이용하여 필요한 클래스를 주입받았습니다.
 
 [아쉬웠던 부분]
+
 1.pageSize와 currentPage가 지원이 되었다면 Paging3를 적용해서 무한 스크롤을 구현하면 좋지 않았을까??
 
 2.diffUtil을 적용하여 성능 최적화를 했으면 어땠을까?
