@@ -1,6 +1,5 @@
 package com.hsh.weeklybox.ui.movielist
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel

@@ -7,7 +7,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface CommonApi {
-    // 상품 리스트
     @GET("boxoffice/searchWeeklyBoxOfficeList.xml")
     suspend fun getWeeklyMovieList(
         @Query("key") key: String,
