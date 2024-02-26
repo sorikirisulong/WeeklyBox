@@ -45,7 +45,8 @@ RecyclerView나 좀 더 많은 데이터를 복잡한 형태로 보여줘야한�
 1. EditTextView에 YYYYMMDD 형태(20120101) 로 입력을 하고 조회를 누릅니다.
    
 
-![image](https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/269443be-355a-4ac7-8cae-a64b06b8d7f9)
+![image](https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/7be7f0fa-bdbc-4905-81d9-0c0f6bfa2c06)
+
 
 
 
