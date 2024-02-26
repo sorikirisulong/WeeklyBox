@@ -1,29 +1,45 @@
 package com.hsh.weeklybox.ui.movielist
 
+import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.hsh.weeklybox.R
 import com.hsh.weeklybox.databinding.FragmentWeeklyMovieDetailBinding
 import com.hsh.weeklybox.ui.common.const.ExtraKey
-import com.hsh.weeklybox.ui.common.helper.FragmentHelper
 import com.hsh.weeklybox.ui.common.helper.ProgressDialogHelper
 import com.hsh.weeklybox.ui.movielist.model.WeeklyMovieDetailEvent
-import com.hsh.weeklybox.ui.movielist.model.WeeklyMovieListEvent
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class WeeklyMovieDetailFragment : Fragment() {
     private var _binding: FragmentWeeklyMovieDetailBinding? = null
     private val viewModel by viewModels<WeeklyMovieDetailViewModel>()
+    private lateinit var callback: OnBackPressedCallback
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                viewModel.onCloseBtnClick()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(this, callback)
+    }
 
     val binding: FragmentWeeklyMovieDetailBinding?
         get() = _binding
+
+    override fun onDestroy() {
+        callback.remove()
+        super.onDestroy()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -62,7 +78,7 @@ class WeeklyMovieDetailFragment : Fragment() {
         viewModel.event.observe(viewLifecycleOwner) { entity ->
             when (entity) {
                 is WeeklyMovieDetailEvent.CloseMovieDetailScreen -> {
-                    requireActivity().onBackPressed()
+                    requireActivity().supportFragmentManager.popBackStack()
                 }
                 else -> {
                     // Nothing to do

@@ -1,5 +1,6 @@
 package com.hsh.weeklybox.ui.movielist
 
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,6 +15,11 @@ import com.hsh.weeklybox.ui.movielist.mapper.WeeklyBoxOfficeListUIModelMapper
 import com.hsh.weeklybox.ui.movielist.model.WeeklyMovieListEvent
 import com.hsh.weeklybox.ui.movielist.model.WeeklyMovieListViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.channels.BufferOverflow
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.drop
+import kotlinx.coroutines.flow.scan
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -36,6 +42,33 @@ class WeeklyMovieListViewModel @Inject constructor(
         get() = _clickEvent
 
     private val items = mutableListOf<WeeklyMovieListModel>()
+
+    private val backPressEvent = MutableSharedFlow<Unit>(
+        replay = 0,
+        extraBufferCapacity = 1,
+        onBufferOverflow = BufferOverflow.DROP_OLDEST
+    )
+
+    fun onBackButtonClick() {
+        backPressEvent.tryEmit(Unit)
+    }
+
+    fun observeBackPressEvent() {
+        viewModelScope.launch {
+            backPressEvent
+                .scan(listOf(System.currentTimeMillis() - BACK_BUTTON_INTERVAL)) { acc, _ ->
+                    acc.takeLast(1) + System.currentTimeMillis()
+                }
+                .drop(1)
+                .collectLatest {
+                    if (it.last() - it.first() < BACK_BUTTON_INTERVAL) {
+                        _event.value = WeeklyMovieListEvent.CloseWeeklyMovieListScreen
+                    } else {
+                        _event.value = WeeklyMovieListEvent.ShowExitWarningToast
+                    }
+                }
+        }
+    }
 
     private val eventHandler = object : ActionHandle {
         override fun handleClick(event: ActionEvent) {
@@ -120,6 +153,7 @@ class WeeklyMovieListViewModel @Inject constructor(
     }
 
     companion object {
+        private const val BACK_BUTTON_INTERVAL = 2000
         private const val SEARCH_MESSAGE = "ex) 20120101 6자리 날짜형식에 맞게 주간영화정보를 조회해보세요."
         private const val NO_RESULT_MESSAGE = "조회된 데이터가 없습니다. 올바른 날짜형식으로 다시 조회해주세요."
     }

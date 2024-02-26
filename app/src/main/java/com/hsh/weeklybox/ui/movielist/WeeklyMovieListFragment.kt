@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -17,6 +19,7 @@ import com.hsh.weeklybox.ui.common.helper.ProgressDialogHelper
 import com.hsh.weeklybox.ui.movielist.event.WeeklyMovieListClickEvent
 import com.hsh.weeklybox.ui.movielist.model.WeeklyMovieListEvent
 import dagger.hilt.android.AndroidEntryPoint
+import kotlin.system.exitProcess
 
 @AndroidEntryPoint
 class WeeklyMovieListFragment : Fragment() {
@@ -24,9 +27,21 @@ class WeeklyMovieListFragment : Fragment() {
     private val viewModel by viewModels<WeeklyMovieListViewModel>()
     private val sharedViewModel by activityViewModels<WeeklyMovieListSharedViewModel>()
     private val weeklyMovieListAdapter = WeeklyMovieListAdapter()
+    private lateinit var callback: OnBackPressedCallback
 
     val binding: FragmentWeeklyMovieListBinding?
         get() = _binding
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                viewModel.onBackButtonClick()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(this, callback)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,9 +53,18 @@ class WeeklyMovieListFragment : Fragment() {
         _binding?.vm = viewModel
 
         initRecyclerView()
-//        initData()
+        observeBackPressEvent()
         initObserver()
         return _binding?.root
+    }
+
+
+    private fun showExitToast() {
+        Toast.makeText(requireContext(), getString(R.string.title_exit_warning), Toast.LENGTH_SHORT).show()
+    }
+
+    private fun observeBackPressEvent() {
+        viewModel.observeBackPressEvent()
     }
 
     private fun searchWeeklyMovieList() {
@@ -75,13 +99,22 @@ class WeeklyMovieListFragment : Fragment() {
 
         viewModel.event.observe(viewLifecycleOwner) { entity ->
             when (entity) {
-                is WeeklyMovieListEvent.Items ->  {
+                is WeeklyMovieListEvent.Items -> {
                     submitList(entity.items)
                 }
 
                 is WeeklyMovieListEvent.SearchButtonClick -> {
                     hideKeyboard()
                     searchWeeklyMovieList()
+                }
+
+                is WeeklyMovieListEvent.ShowExitWarningToast -> {
+                    showExitToast()
+                }
+
+                is WeeklyMovieListEvent.CloseWeeklyMovieListScreen -> {
+                    requireActivity().finishAffinity()
+                    exitProcess(0)
                 }
 
                 else -> {
@@ -106,6 +139,11 @@ class WeeklyMovieListFragment : Fragment() {
             this?.itemAnimator = null
             this?.setHasFixedSize(true)
         }
+    }
+
+    override fun onDestroy() {
+        callback.remove()
+        super.onDestroy()
     }
 
     companion object {

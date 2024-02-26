@@ -2,7 +2,6 @@ package com.hsh.weeklybox.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import com.hsh.weeklybox.R
 import com.hsh.weeklybox.ui.common.helper.FragmentHelper
