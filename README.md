@@ -2,6 +2,10 @@ DynamicRecyclerView + MVVM + Hilt + Retrofit2 + Coroutine
 
 <img width="398" alt="image" src="https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/9932864e-ceac-4ca9-929a-f96d83649a08">
 
+<img width="1059" alt="image" src="https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/e378d829-439a-4ab3-8a8f-b916726af43b">
+
+
+
 [동작설명]
 
 1. EditTextView에 YYYYMMDD 형태(20120101) 로 입력을 하고 조회를 누릅니다.
