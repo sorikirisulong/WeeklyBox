@@ -52,7 +52,8 @@ RecyclerView나 좀 더 많은 데이터를 복잡한 형태로 보여줘야한�
 이때 Recyclerview에는 여러개의 ViewHolder가 동적으로 binding 됩니다.
 
 
-![image](https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/8cbf3502-75a0-4d47-b63f-559be00df325)
+![image](https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/e64b7ef0-b21b-4229-94a3-97828f97aa27)
+
 
 
 
@@ -62,5 +63,6 @@ RecyclerView나 좀 더 많은 데이터를 복잡한 형태로 보여줘야한�
 
 3.영화 상세정보를 클릭하면 영화 상세정보 api를  call하고 응답 데이터를 또 다른 Fragment에서 보여줍니다.
 
-![image](https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/b75e5c75-26c9-4213-b0b9-42a54e4e8fe7)
+![image](https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/70a8fc1c-4d0f-4f07-b4b9-627069d04c83)
+
 
