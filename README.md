@@ -4,6 +4,9 @@ DynamicRecyclerView + MVVM + Hilt + Retrofit2 + Coroutine
 
 <img width="1059" alt="image" src="https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/e378d829-439a-4ab3-8a8f-b916726af43b">
 
+<img width="956" alt="image" src="https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/b51a7a76-6e52-4a3b-a639-82faec2ee290">
+
+
 
 [구조설명]
 
