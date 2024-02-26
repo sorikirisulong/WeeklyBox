@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         app:rc_radius="36dp"
         app:rc_stroke_color="@color/white"
-        app:rc_fill_color="#FF4081">
+        app:rc_fill_color="@color/deep_gray">
 
         <ImageButton
             android:id="@+id/btn_close"

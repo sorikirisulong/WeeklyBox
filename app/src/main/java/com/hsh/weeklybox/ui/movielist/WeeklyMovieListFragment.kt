@@ -1,10 +1,11 @@
 package com.hsh.weeklybox.ui.movielist
 
+import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -57,6 +58,16 @@ class WeeklyMovieListFragment : Fragment() {
         }
     }
 
+    fun hideKeyboard() {
+        val inputMethodManager = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        binding?.searchView?.clearFocus()
+        inputMethodManager.hideSoftInputFromWindow(binding?.searchView?.windowToken, InputMethodManager.HIDE_IMPLICIT_ONLY)
+    }
+
+    private fun submitList(items: List<WeeklyMovieListModel>) {
+        weeklyMovieListAdapter.setItemList(items)
+    }
+
     private fun initObserver() {
         viewModel.progress.observe(viewLifecycleOwner) { isLoading ->
             showProgress(isLoading)
@@ -64,8 +75,12 @@ class WeeklyMovieListFragment : Fragment() {
 
         viewModel.event.observe(viewLifecycleOwner) { entity ->
             when (entity) {
-                is WeeklyMovieListEvent.Items -> weeklyMovieListAdapter.setItemList(entity.items)
+                is WeeklyMovieListEvent.Items ->  {
+                    submitList(entity.items)
+                }
+
                 is WeeklyMovieListEvent.SearchButtonClick -> {
+                    hideKeyboard()
                     searchWeeklyMovieList()
                 }
 
