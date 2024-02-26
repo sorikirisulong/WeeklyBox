@@ -1,6 +1,5 @@
 package com.hsh.weeklybox.ui.movielist
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -10,7 +9,7 @@ import com.hsh.weeklybox.framework.event.SingleLiveEvent
 import com.hsh.weeklybox.ui.common.handler.ActionEvent
 import com.hsh.weeklybox.ui.common.handler.ActionHandle
 import com.hsh.weeklybox.ui.movielist.event.WeeklyMovieListClickEvent
-import com.hsh.weeklybox.ui.movielist.item.MovieListItemType
+import com.hsh.weeklybox.ui.movielist.item.WeeklyMovieListItemViewType
 import com.hsh.weeklybox.ui.movielist.mapper.WeeklyBoxOfficeListUIModelMapper
 import com.hsh.weeklybox.ui.movielist.model.WeeklyMovieListEvent
 import com.hsh.weeklybox.ui.movielist.model.WeeklyMovieListViewState
@@ -105,7 +104,7 @@ class WeeklyMovieListViewModel @Inject constructor(
         weeklyBoxOfficeList: WeeklyBoxOfficeList?
     ) {
         items.clear()
-        MovieListItemType.values().forEach { viewType ->
+        WeeklyMovieListItemViewType.values().forEach { viewType ->
             (viewType.mapper?.getConstructor()?.newInstance())?.mapToItemModel(
                 boxofficeType = boxofficeType,
                 showRange = showRange,

@@ -1,12 +1,11 @@
 package com.hsh.weeklybox.ui.movielist
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.hsh.weeklybox.framework.extension.orZero
-import com.hsh.weeklybox.ui.movielist.item.MovieListItemType
+import com.hsh.weeklybox.ui.movielist.item.WeeklyMovieListItemViewType
 import com.hsh.weeklybox.ui.movielist.item.WeeklyMovieListItemViewHolder
 import com.hsh.weeklybox.ui.movielist.item.WeeklyMovieListViewHolderProvider
 
@@ -20,7 +19,7 @@ class WeeklyMovieListAdapter :
         parent: ViewGroup,
         viewType: Int
     ): WeeklyMovieListItemViewHolder<WeeklyMovieListModel, ViewDataBinding> {
-        return holderProvider.getViewHolder(parent, MovieListItemType.values()[viewType])
+        return holderProvider.getViewHolder(parent, WeeklyMovieListItemViewType.values()[viewType])
     }
 
     override fun onBindViewHolder(

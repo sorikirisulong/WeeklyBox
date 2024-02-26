@@ -20,7 +20,7 @@
             android:id="@+id/layout_content"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:background="#FF1493"
+            android:background="#455A64"
             android:paddingTop="22dp"
             android:paddingHorizontal="10dp"
             android:paddingBottom="16dp">

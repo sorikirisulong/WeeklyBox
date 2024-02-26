@@ -17,16 +17,16 @@ class WeeklyMovieListViewHolderProvider @Inject constructor() {
     @Suppress("UNCHECKED_CAST")
     fun getViewHolder(
         parent: ViewGroup,
-        viewType: MovieListItemType
+        viewType: WeeklyMovieListItemViewType
     ): WeeklyMovieListItemViewHolder<WeeklyMovieListModel, ViewDataBinding> {
         return when (viewType) {
-            MovieListItemType.HEADER -> WeeklyMovieListHeaderViewHolder(
+            WeeklyMovieListItemViewType.HEADER -> WeeklyMovieListHeaderViewHolder(
                 getItemView(parent, R.layout.item_weekly_movie_list_header)
             )
-            MovieListItemType.CONTENTS -> WeeklyMovieListContentsViewHolder (
+            WeeklyMovieListItemViewType.CONTENTS -> WeeklyMovieListContentsViewHolder (
                 getItemView(parent, R.layout.item_weekly_movie_list_contents)
             )
-            MovieListItemType.FOOTER -> WeeklyMovieListFooterViewHolder (
+            WeeklyMovieListItemViewType.FOOTER -> WeeklyMovieListFooterViewHolder (
                 getItemView(parent, R.layout.item_weekly_movie_list_footer)
             )
         } as WeeklyMovieListItemViewHolder<WeeklyMovieListModel, ViewDataBinding>
