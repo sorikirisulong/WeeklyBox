@@ -58,7 +58,8 @@ RecyclerView나 좀 더 많은 데이터를 복잡한 형태로 보여줘야한�
 
 
 
-![image](https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/49b3d924-161e-46c2-89a3-4fb3362b9de6)
+![image](https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/be062aa5-ddf9-4a80-9139-ee6d04d4b862)
+
 
 
 3.영화 상세정보를 클릭하면 영화 상세정보 api를  call하고 응답 데이터를 또 다른 Fragment에서 보여줍니다.
