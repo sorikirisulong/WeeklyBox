@@ -52,7 +52,8 @@ RecyclerView나 좀 더 많은 데이터를 복잡한 형태로 보여줘야한�
 이때 Recyclerview에는 여러개의 ViewHolder가 동적으로 binding 됩니다.
 
 
-![image](https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/a0ab8f70-aa79-4169-8bb0-83021aca44d3)
+![image](https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/8cbf3502-75a0-4d47-b63f-559be00df325)
+
 
 
 
