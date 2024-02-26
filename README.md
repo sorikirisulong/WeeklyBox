@@ -1,5 +1,7 @@
 DynamicRecyclerView + MVVM + Hilt + Retrofit2 + Coroutine
 
+<img width="398" alt="image" src="https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/9932864e-ceac-4ca9-929a-f96d83649a08">
+
 [동작설명]
 1. EditTextView에 YYYYMMDD 형태(20120101) 로 입력을 하고 조회를 누릅니다.
 ![image](https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/1589a36c-deb3-4037-948a-b1ac64a991a0)
@@ -14,5 +16,5 @@ DynamicRecyclerView + MVVM + Hilt + Retrofit2 + Coroutine
 
 
 3.영화 상세정보를 클릭하면 영화 상세정보 api를  call하고 응답 데이터를 또 다른 Fragment에서 보여줍니다.
+![image](https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/b75e5c75-26c9-4213-b0b9-42a54e4e8fe7)
 
-<img width="398" alt="image" src="https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/9932864e-ceac-4ca9-929a-f96d83649a08">
