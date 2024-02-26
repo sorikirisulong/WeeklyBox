@@ -45,7 +45,8 @@ RecyclerView나 좀 더 많은 데이터를 복잡한 형태로 보여줘야한�
 1. EditTextView에 YYYYMMDD 형태(20120101) 로 입력을 하고 조회를 누릅니다.
    
 
-![image](https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/1589a36c-deb3-4037-948a-b1ac64a991a0)
+![image](https://github.com/sorikirisulong/weekly_boxoffice_api_with_dynamic_recyclerview/assets/103094210/269443be-355a-4ac7-8cae-a64b06b8d7f9)
+
 
 
 3. 해당 날짜에 부합하는 주간 박스오피스 정보 api를 call하고 이에 대한 응답 리스트 데이터가 내려오고 이를 RecyclerView를 통해 표출됩니다.
